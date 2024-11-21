@@ -69,45 +69,55 @@ const page = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-sky-200 to-white pt-10">
-      <div className="min-h-screen bg-slate-500">
-        <motion.main
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-          className="container mx-auto px-4 py-20 text-center"
-        >
-          <motion.h1
+    <div className="min-h-screen bg-gradient-to-b to-white pt-20">
+      <div className="relative">
+        <div className="absolute inset-0 z-0">
+          <img
+            className="w-screen h-screen"
+            src="https://i.pinimg.com/736x/f2/90/50/f29050c0d54fb56dd67213927877b8b6.jpg"
+            alt="Logo"
+          />
+        </div>
+        <div className="  z-10 relative">
+          <motion.main
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.2, duration: 0.5 }}
-            className="mb-6 text-4xl md:text-6xl font-bold text-white max-w-4xl mx-auto leading-tight"
+            transition={{ duration: 0.5 }}
+            className="container mx-auto px-4 py-20 text-center"
           >
-            Манай технологи хөгжлийг хурдасгана
-          </motion.h1>
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.4, duration: 0.5 }}
-            className="mb-12 text-lg md:text-xl text-white/90 max-w-2xl mx-auto"
-          >
-            Дэвшилтэд технологи ашиглан таны бизнесийн ашгийг нэмэгдүүлж,
-            хяналтыг сайжруулна
-          </motion.p>
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.6, duration: 0.5 }}
-          >
-            <Button
-              className="bg-white text-[#6B46C1] hover:bg-white/90 px-8 py-6 text-lg font-medium"
-              size="lg"
+            <motion.h1
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.2, duration: 0.5 }}
+              className="mb-6 text-4xl md:text-7xl font-bold text-white max-w-4xl mx-auto leading-tight"
             >
-              Бидэнтэй холбогдох
-            </Button>
-          </motion.div>
-        </motion.main>
+              Манай технологи хөгжлийг хурдасгана
+            </motion.h1>
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.4, duration: 0.5 }}
+              className="mb-12 text-lg md:text-xl text-white/90 max-w-2xl mx-auto"
+            >
+              Дэвшилтэд технологи ашиглан таны бизнесийн ашгийг нэмэгдүүлж,
+              хяналтыг сайжруулна
+            </motion.p>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.6, duration: 0.5 }}
+            >
+              <Button
+                className="bg-white text-[#6B46C1] hover:bg-white/90 px-8 py-6 text-lg font-medium"
+                size="lg"
+              >
+                Бидэнтэй холбогдох
+              </Button>
+            </motion.div>
+          </motion.main>
+        </div>
       </div>
+
       <div className="container mx-auto px-4 py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {services.map((service, index) => {
@@ -119,7 +129,7 @@ const page = () => {
                   index === 0 ? "text-white" : "text-gray-800"
                 } shadow-lg hover:shadow-xl transition-transform duration-300 transform hover:-translate-y-2`}
               >
-                <CardContent className="p-6">
+                <CardContent className="p-6  ">
                   <div
                     className={`w-12 h-12 rounded flex items-center justify-center ${
                       index === 0 ? "" : "bg-[#2B4B8C]"

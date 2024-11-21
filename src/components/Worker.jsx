@@ -23,7 +23,7 @@ const Worker = () => {
   ];
 
   return (
-    <div className=" bg-gradient-to-br flex flex-col justify-center items-center">
+    <div className=" bg-gradient-to-br flex flex-col justify-center items-center pt-28">
       <div className="container mx-auto px-4">
         <div className="flex flex-wrap justify-center gap-8 mb-16">
           {products.map((product) => (
@@ -68,7 +68,9 @@ const Worker = () => {
             <div className="relative z-10">
               <div className="relative bg-white rounded-lg shadow-xl overflow-hidden">
                 <div className="aspect-video bg-gray-900 relative">
-                  <div className="w-[600px] h-[400px] object-cover"></div>
+                  <div className="w-[600px] h-[400px] object-cover text-white">
+                    <img className="object-cover" src="/logo.png" alt="" />
+                  </div>
                 </div>
               </div>
             </div>
