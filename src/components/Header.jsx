@@ -7,14 +7,8 @@ const Header = () => {
     <header className=" z-10 fixed w-screen bg-[#2B4B8C] mx-auto py-6">
       <nav className="flex items-center justify-between">
         <div className="flex items-center gap-2">
-          <Image
-            src="/placeholder.svg"
-            alt="Zevtabs logo"
-            width={40}
-            height={40}
-            className="h-10 w-10"
-          />
-          <span className="text-2xl font-bold text-white">Zevtabs</span>
+          <img src="/public/logo.png" alt="" />
+          <span className="text-2xl font-bold text-white">E-Account</span>
         </div>
 
         <div className="hidden md:flex items-center gap-8">
