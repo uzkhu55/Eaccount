@@ -80,7 +80,7 @@ export default function Service() {
     <div className="container mx-auto px-4 py-12">
       <div className="text-center max-w-3xl mx-auto mb-12">
         <span className="text-blue-900 font-extrabold text-[12px]">
-          Хянаж чадахгүй бол удирдаж чадахгүй
+          Санхүүгийн хяналтыг гар утаснаасаа
         </span>
         <h2 className="text-4xl font-bold mb-4 ">Манай үйлчилгээ</h2>
         <p className="text-gray-600">
