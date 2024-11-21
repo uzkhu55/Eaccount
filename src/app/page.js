@@ -1,101 +1,293 @@
+"use client";
+
+import {
+  BarChart3,
+  DollarSign,
+  Diamond,
+  ArrowLeftRight,
+  Percent,
+  CreditCard,
+  Facebook,
+} from "lucide-react";
+import { Card, CardContent } from "../components/ui/card";
+import { Phone, ArrowRight } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import Link from "next/link";
 import Image from "next/image";
+import { motion } from "framer-motion";
+import Footer from "@/components/Footer";
+import Component from "@/components/Stats";
+import Linear from "@/components/Linear";
 
-export default function Home() {
+const page = () => {
+  const services = [
+    {
+      icon: BarChart3,
+      title: "Юу байх1",
+      description:
+        "Бизнесийн агуу зүйлийг хэзээ ч нэг хүн хийдэггүй. Тэдгээрийг хүмүүсийн баг хийдэг.",
+      bgColor: "bg-[#2B4B8C]",
+    },
+    {
+      icon: DollarSign,
+      title: "Юу байх2",
+      description:
+        "Бизнесийн агуу зүйлийг хэзээ ч нэг хүн хийдэггүй. Тэдгээрийг хүмүүсийн баг хийдэг.",
+      bgColor: "bg-white",
+    },
+    {
+      icon: Diamond,
+      title: "Юу байх3",
+      description:
+        "Бизнесийн агуу зүйлийг хэзээ ч нэг хүн хийдэггүй. Тэдгээрийг хүмүүсийн баг хийдэг.",
+      bgColor: "bg-white",
+    },
+    {
+      icon: ArrowLeftRight,
+      title: "Юу байх4",
+      description:
+        "Бизнесийн агуу зүйлийг хэзээ ч нэг хүн хийдэггүй. Тэдгээрийг хүмүүсийн баг хийдэг.",
+
+      bgColor: "bg-white",
+    },
+    {
+      icon: Percent,
+      title: "Юу байх5",
+      description:
+        "Бизнесийн агуу зүйлийг хэзээ ч нэг хүн хийдэггүй. Тэдгээрийг хүмүүсийн баг хийдэг.",
+
+      bgColor: "bg-white",
+    },
+    {
+      icon: CreditCard,
+      title: "Юу байх6",
+      description:
+        "Бизнесийн агуу зүйлийг хэзээ ч нэг хүн хийдэггүй. Тэдгээрийг хүмүүсийн баг хийдэг.",
+
+      bgColor: "bg-white",
+    },
+  ];
+
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              src/app/page.js
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+    <div className="min-h-screen bg-gradient-to-b from-sky-200 to-white">
+      <div className="min-h-screen bg-[#2B4B8C]">
+        <header className=" z-10 fixed w-screen bg-[#2B4B8C] mx-auto px-4 py-6">
+          <nav className="flex items-center justify-between">
+            <div className="flex items-center gap-2">
+              <Image
+                src="/placeholder.svg"
+                alt="Zevtabs logo"
+                width={40}
+                height={40}
+                className="h-10 w-10"
+              />
+              <span className="text-2xl font-bold text-white">Zevtabs</span>
+            </div>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+            <div className="hidden md:flex items-center gap-8">
+              <Link
+                className="text-white/90 hover:text-white transition-colors"
+                href="#"
+              >
+                Эхлэл
+              </Link>
+              <Link
+                className="text-white/90 hover:text-white transition-colors"
+                href="#"
+              >
+                Бүтээгдэхүүн
+              </Link>
+              <Link
+                className="text-white/90 hover:text-white transition-colors"
+                href="#"
+              >
+                Харилцагч
+              </Link>
+              <Link
+                className="text-white/90 hover:text-white transition-colors"
+                href="#"
+              >
+                Үйлчилгээ
+              </Link>
+              <Link
+                className="text-white/90 hover:text-white transition-colors"
+                href="#"
+              >
+                Холбоо барих
+              </Link>
+            </div>
+
+            <button className="flex items-center gap-2 rounded-md border border-white/20 px-3 py-1">
+              <Image
+                src="/placeholder.svg"
+                alt="English language"
+                width={20}
+                height={20}
+                className="h-5 w-5"
+              />
+              <span className="text-sm text-white">EN</span>
+            </button>
+          </nav>
+        </header>
+
+        <motion.main
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          className="container mx-auto px-4 py-20 text-center"
+        >
+          <motion.h1
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.2, duration: 0.5 }}
+            className="mb-6 text-4xl md:text-6xl font-bold text-white max-w-4xl mx-auto leading-tight"
           >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+            Манай технологи хөгжлийг хурдасгана
+          </motion.h1>
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.4, duration: 0.5 }}
+            className="mb-12 text-lg md:text-xl text-white/90 max-w-2xl mx-auto"
           >
-            Read our docs
-          </a>
+            Дэвшилтэд технологи ашиглан таны бизнесийн ашгийг нэмэгдүүлж,
+            хяналтыг сайжруулна
+          </motion.p>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.6, duration: 0.5 }}
+          >
+            <Button
+              className="bg-white text-[#6B46C1] hover:bg-white/90 px-8 py-6 text-lg font-medium"
+              size="lg"
+            >
+              Бидэнтэй холбогдох
+            </Button>
+          </motion.div>
+        </motion.main>
+      </div>
+      <div className="container mx-auto px-4 py-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {services.map((service, index) => {
+            const Icon = service.icon;
+            return (
+              <Card
+                key={index}
+                className={`${service.bgColor} ${
+                  index === 0 ? "text-white" : "text-gray-800"
+                } shadow-lg hover:shadow-xl transition-transform duration-300 transform hover:-translate-y-2`}
+              >
+                <CardContent className="p-6">
+                  <div
+                    className={`w-12 h-12 rounded flex items-center justify-center ${
+                      index === 0 ? "" : "bg-[#2B4B8C]"
+                    } mb-4`}
+                  >
+                    <Icon
+                      className={`h-6 w-6 ${
+                        index === 0 ? "text-white" : "text-white"
+                      }`}
+                    />
+                  </div>
+                  <h3 className="text-xl font-bold mb-2">{service.title}</h3>
+                  <p
+                    className={`${
+                      index === 0 ? "text-white/90" : "text-gray-600"
+                    } group-hover:text-white`}
+                  >
+                    {service.description}
+                  </p>
+                </CardContent>
+              </Card>
+            );
+          })}
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+      </div>
+      <div className="container mx-auto px-4">
+        <div className="bg-[#2B4B8C] p-6 md:p-8 rounded-lg flex flex-col md:flex-row items-center justify-between mb-16">
+          <div className="flex items-center gap-4 mb-4 md:mb-0">
+            <div className="bg-[#4B699B] p-3 rounded">
+              <Phone className="h-6 w-6 text-white" />
+            </div>
+            <div>
+              <h2 className="text-2xl font-bold text-white">Холбогдох</h2>
+              <p className="text-white/80"></p>
+            </div>
+          </div>
+          <Button className="bg-white text-[#2B4B8C] hover:bg-white/90 flex items-center gap-2">
+            Залгах
+            <ArrowRight className="h-4 w-4" />
+          </Button>
+        </div>
+
+        <div className="grid md:grid-cols-2 gap-12 items-center relative pb-16">
+          <div className="absolute right-0 top-0 w-1/2 h-full hidden md:block">
+            <div className="grid grid-cols-12 gap-4 h-full">
+              {[...Array(120)].map((_, i) => (
+                <div key={i} className="w-1 h-1 bg-gray-200 rounded-full" />
+              ))}
+            </div>
+          </div>
+
+          <div className="relative">
+            <h2 className="text-3xl font-bold text-[#2B4B8C] mb-6 relative inline-block">
+              Харилцагчийн сэтгэгдэл
+              <span className="absolute -bottom-2 left-0 w-12 h-1 bg-[#2B4B8C]" />
+            </h2>
+            <p className="text-gray-600 mb-6 leading-relaxed">
+              Нягтлан бодох бүртгэлийн Юникус онлайн системийг манай байгууллага
+              2011 оноос хойш төв болон хөдөө орон нутгийн бүх салбартаа ашиглаж
+              байгаа билээ. Энэ систем нь ашиглахад хялбар, манай монголын
+              нөхцөл тохирсон систем гэж үзэж байна. Бид Юникус систем
+              ашигласнаар тайлан гаргах, нэгтгэхтэй холбоотой цаг хугацаа,
+              зардлыг 80% хэмэж чадсан. Гаалийн Ерөнхий газар, Ерөнхий нябо
+              Г.Бат-Эрдэнэ Нягтлан бодох бүртгэлийн Юникус онлайн системийг
+              манай байгууллага 2010 оноос хойш төв болон хөдөө орон нутгийн бүх
+              салбартаа ашиглаж байгаа билээ. Энэ систем нь ашиглахад энгийн
+              хялбар, бид Юникус системийг ашигласнаар тайлан гаргах, нэгтгэхтэй
+              холбоотой цаг хугацаа, зардлыг 80% хэмэж чадсан.
+            </p>
+            <Button
+              variant="outline"
+              className="border-[#2B4B8C] text-[#2B4B8C] hover:bg-[#2B4B8C] hover:text-white"
+            >
+              Read more
+            </Button>
+          </div>
+
+          {/* Image */}
+          <div className="relative">
+            <img
+              src="/logo.png"
+              alt="Business meeting with financial charts"
+              className="w-full h-auto rounded-lg shadow-lg"
+              width={600}
+              height={400}
+            />
+          </div>
+        </div>
+      </div>
+      <Component />
+      <Linear />
+
+      <div className="container mx-auto px-4 py-16 text-center">
+        <h2 className="text-3xl flex items-center justify-center flex-col gap-4 md:text-4xl font-bold text-[#2B4B8C] mb-6">
+          Асуулт байна уу? Бидэнтэй чөлөөтэй холбогдоорой
+          <a
+            className="flex items-center"
+            target="blank"
+            href="
+          https://www.facebook.com/victory.tse
+        "
+          >
+            <Facebook />
+          </a>
+        </h2>
+      </div>
+      <Footer />
     </div>
   );
-}
+};
+
+export default page;
