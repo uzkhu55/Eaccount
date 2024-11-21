@@ -4,10 +4,10 @@ import Link from "next/link";
 import Image from "next/image";
 const Header = () => {
   return (
-    <header className=" z-10 fixed w-screen bg-[#2B4B8C] mx-auto py-6">
+    <header className=" z-50 fixed w-screen bg-[#2B4B8C] px-12 py-6">
       <nav className="flex items-center justify-between">
         <div className="flex items-center gap-2">
-          <img src="/public/logo.png" alt="" />
+          <img className="w-[30px] h-[30px]" src="/logo.png" alt="" />
           <span className="text-2xl font-bold text-white">E-Account</span>
         </div>
 

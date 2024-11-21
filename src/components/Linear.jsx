@@ -93,17 +93,30 @@ function SkillBar({ skill, percentage }) {
 
 export default function Linear() {
   const chartData = {
-    labels: ["JAN", "FEB", "MAR", "APR", "MAY", "JUN", "JUL", "AUG"],
+    labels: [
+      "JAN",
+      "FEB",
+      "MAR",
+      "APR",
+      "MAY",
+      "JUN",
+      "JUL",
+      "AUG",
+      "SEP",
+      "OCT",
+      "NOV",
+      "DEC",
+    ],
     datasets: [
       {
         label: "Label",
-        data: [15, 20, 27, 25, 23, 25, 23, 25],
+        data: [10, 20, 27, 25, 23, 25, 23, 25],
         borderColor: "rgb(209, 213, 219)",
         tension: 0.4,
       },
       {
         label: "Title",
-        data: [25, 18, 16, 17, 20, 25, 30, 35],
+        data: [0, 18, 0, 0, 0, 0, 0, 0],
         borderColor: "rgb(59, 130, 246)",
         backgroundColor: "rgba(59, 130, 246, 0.1)",
         fill: true,
@@ -113,12 +126,12 @@ export default function Linear() {
   };
 
   const stats = [
-    { value: 78, label: "Wealth Management" },
-    { value: 85, label: "Risk Management", suffix: "%" },
-    { value: 65, label: "Saving & Investments", suffix: "k" },
-    { value: 89, label: "Money Transfers", suffix: "M" },
-    { value: 35, label: "Our Advisory Price", suffix: "/hr" },
-    { value: 99, label: "Satisfied Clients", suffix: "%" },
+    { value: 78, label: "Хөрөнгө" },
+    { value: 85, label: "Хөрөнгө", suffix: "%" },
+    { value: 65, label: "Хөрөнгө", suffix: "k" },
+    { value: 89, label: "Хөрөнгө", suffix: "M" },
+    { value: 35, label: "Хөрөнгө", suffix: "/hr" },
+    { value: 99, label: "Хөрөнгө", suffix: "%" },
   ];
 
   return (
@@ -152,10 +165,10 @@ export default function Linear() {
           className="mb-16"
         >
           <h2 className="text-3xl font-bold text-blue-900 mb-8 text-center">
-            Our Skills
+            Бүтээгдэхүүн үнэлгээ
           </h2>
           <div className="max-w-2xl mx-auto">
-            <SkillBar skill="Loan Consultant" percentage={93} />
+            <SkillBar skill="Зээл" percentage={93} />
             <SkillBar skill="Financial Planning" percentage={91} />
             <SkillBar skill="Tax Solution" percentage={96} />
             <SkillBar skill="Risk Analysis" percentage={89} />
@@ -166,7 +179,7 @@ export default function Linear() {
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
           {stats.map((stat, index) => (
             <motion.div
-              key={stat.label}
+              key={index}
               initial={{ opacity: 0, scale: 0.5 }}
               whileInView={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}

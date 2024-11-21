@@ -70,7 +70,7 @@ const page = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-sky-200 to-white pt-10">
-      <div className="min-h-screen bg-slate-500">
+      <div className="min-h-screen bg-[#2B4B8C]">
         <motion.main
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}

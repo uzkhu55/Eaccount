@@ -57,7 +57,7 @@ const Worker = () => {
               мэргэжилтнүүд.
             </p>
             <div className="flex flex-wrap gap-4">
-              <Button className="bg-blue-600 hover:bg-blue-700">
+              <Button className="bg-white hover:bg-black hover:text-white">
                 Demo туршаад үзээрэй <div className="ml-2 h-4 w-4"></div>
               </Button>
               <Button>Заавар үзэх</Button>

@@ -75,11 +75,9 @@ export default function Component() {
           <PieChart className="w-8 h-8 text-white" />
         </div>
         <h1 className="text-4xl md:text-5xl font-bold text-blue-900 mb-4">
-          Totally New Business Way
+          Нийт хандалтын тоо
         </h1>
-        <p className="text-lg text-blue-800/80">
-          We have 20 years experience in financial advising.
-        </p>
+        <p className="text-lg text-blue-800/80">20 жилийн туршлагатай </p>
       </motion.div>
 
       <div
@@ -87,10 +85,10 @@ export default function Component() {
         className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto mb-16"
       >
         {[
-          { number: 170, label: "HAPPY CLIENTS", suffix: "+" },
-          { number: 3, label: "MONEY SAVED", prefix: "$", suffix: "M" },
-          { number: 1350, label: "CREDIT REPAIRED", suffix: "+" },
-          { number: 146, label: "BUSINESS LAUNCHED" },
+          { number: 170, label: "Үйлчлүүлэгчид", suffix: "+" },
+          { number: 3, label: "Хэмнэлт", prefix: "$", suffix: "M" },
+          { number: 1350, label: "Кредит оноо", suffix: "+" },
+          { number: 146, label: "Холбогдсон байгууллага" },
         ].map((stat, index) => (
           <motion.div
             key={stat.label}
@@ -122,11 +120,11 @@ export default function Component() {
           variant="outline"
           className="bg-white hover:bg-blue-50 text-blue-900 border-blue-900"
         >
-          Read More About Us
+          Дэлгэрэнгүй
         </Button>
         <span className="text-blue-900 font-medium">OR</span>
         <Button className="bg-blue-900 hover:bg-blue-800 text-white">
-          Request a Call Back
+          Холбогдох{" "}
         </Button>
       </motion.div>
     </div>
