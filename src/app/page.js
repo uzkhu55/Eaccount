@@ -69,67 +69,8 @@ const page = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-sky-200 to-white">
-      <div className="min-h-screen bg-[#2B4B8C]">
-        <header className=" z-10 fixed w-screen bg-[#2B4B8C] mx-auto px-4 py-6">
-          <nav className="flex items-center justify-between">
-            <div className="flex items-center gap-2">
-              <Image
-                src="/placeholder.svg"
-                alt="Zevtabs logo"
-                width={40}
-                height={40}
-                className="h-10 w-10"
-              />
-              <span className="text-2xl font-bold text-white">Zevtabs</span>
-            </div>
-
-            <div className="hidden md:flex items-center gap-8">
-              <Link
-                className="text-white/90 hover:text-white transition-colors"
-                href="#"
-              >
-                Эхлэл
-              </Link>
-              <Link
-                className="text-white/90 hover:text-white transition-colors"
-                href="#"
-              >
-                Бүтээгдэхүүн
-              </Link>
-              <Link
-                className="text-white/90 hover:text-white transition-colors"
-                href="#"
-              >
-                Харилцагч
-              </Link>
-              <Link
-                className="text-white/90 hover:text-white transition-colors"
-                href="#"
-              >
-                Үйлчилгээ
-              </Link>
-              <Link
-                className="text-white/90 hover:text-white transition-colors"
-                href="#"
-              >
-                Холбоо барих
-              </Link>
-            </div>
-
-            <button className="flex items-center gap-2 rounded-md border border-white/20 px-3 py-1">
-              <Image
-                src="/placeholder.svg"
-                alt="English language"
-                width={20}
-                height={20}
-                className="h-5 w-5"
-              />
-              <span className="text-sm text-white">EN</span>
-            </button>
-          </nav>
-        </header>
-
+    <div className="min-h-screen bg-gradient-to-b from-sky-200 to-white pt-10">
+      <div className="min-h-screen bg-slate-500">
         <motion.main
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -285,7 +226,6 @@ const page = () => {
           </a>
         </h2>
       </div>
-      <Footer />
     </div>
   );
 };
