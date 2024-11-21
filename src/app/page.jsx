@@ -111,7 +111,7 @@ const page = () => {
                 className="bg-white text-[#6B46C1] hover:bg-white/90 px-8 py-6 text-lg font-medium"
                 size="lg"
               >
-                Бидэнтэй холбогдох
+                Бидэнтэй холбогдох e
               </Button>
             </motion.div>
           </motion.main>
