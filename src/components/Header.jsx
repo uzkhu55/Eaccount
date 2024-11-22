@@ -46,7 +46,7 @@ const Header = () => {
             href="http://www.e-account.mn/LoginPage?ReturnUrl=%2F"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-white/90 hover:bg-[#2B4B8C] hover:text-white bg-white text-black p-2 rounded-2xl  transition-colors  gap-2"
+            className="text-white/90 hover:text-white transition-colors hover:border-b "
           >
             Нэвтрэх
           </a>
