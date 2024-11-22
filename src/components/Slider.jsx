@@ -1,107 +1,60 @@
-"use client";
+import * as React from "react";
+import Image from "next/image";
+import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area";
 
-import { useState, useEffect } from "react";
-import { ChevronLeft, ChevronRight } from "lucide-react";
-import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
+const works = [
+  {
+    artist: "user1",
+    art: "https://plus.unsplash.com/premium_photo-1679923813998-6603ee2466c5?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8ZmluYW5jZXxlbnwwfHwwfHx8MA%3D%3D",
+  },
+  {
+    artist: "user2",
+    art: "https://plus.unsplash.com/premium_photo-1661443781814-333019eaad2d?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8ZmluYW5jZXxlbnwwfHwwfHx8MA%3D%3D",
+  },
+  {
+    artist: "user3",
+    art: "https://plus.unsplash.com/premium_photo-1661774987792-17a95638d874?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTd8fGZpbmFuY2V8ZW58MHx8MHx8fDA%3D",
+  },
+  {
+    artist: "user4",
+    art: "https://plus.unsplash.com/premium_photo-1679923813998-6603ee2466c5?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8ZmluYW5jZXxlbnwwfHwwfHx8MA%3D%3D",
+  },
+  {
+    artist: "user5",
+    art: "https://plus.unsplash.com/premium_photo-1679923813998-6603ee2466c5?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8ZmluYW5jZXxlbnwwfHwwfHx8MA%3D%3D",
+  },
+  {
+    artist: "user6",
+    art: "https://plus.unsplash.com/premium_photo-1679923813998-6603ee2466c5?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8ZmluYW5jZXxlbnwwfHwwfHx8MA%3D%3D",
+  },
+  {
+    artist: "user7",
+    art: "https://plus.unsplash.com/premium_photo-1679923813998-6603ee2466c5?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8ZmluYW5jZXxlbnwwfHwwfHx8MA%3D%3D",
+  },
+];
 
-export default function ImageSlider({ images = [], interval = 5000 }) {
-  const [currentIndex, setCurrentIndex] = useState(0);
-
-  useEffect(() => {
-    if (images.length > 0) {
-      const timer = setInterval(() => {
-        setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
-      }, interval);
-
-      return () => clearInterval(timer);
-    }
-  }, [images, interval]);
-
-  if (!images || images.length === 0) {
-    return (
-      <div className="text-center p-4">
-        <p>No images available for the slider.</p>
+export function ScrollAreaHorizontalDemo() {
+  return (
+    <ScrollArea className="w-full whitespace-nowrap flex justify-center items-center gap-16 cursor-pointer py-20">
+      <div className="flex w-max space-x-4 p-4 ">
+        {works.map((artwork) => (
+          <figure key={artwork.artist} className="shrink-0 ">
+            <div className="overflow-hidden rounded-md cursor-pointer">
+              <Image
+                src={artwork.art}
+                alt={`Ажилтан ${artwork.artist}`}
+                className="aspect-[3/4] h-fit w-fit object-cover "
+                width={600}
+                height={400}
+              />
+            </div>
+            <figcaption className=" text-lg">
+              Ажилтан <span className="font-semibold">{artwork.artist}</span>
+            </figcaption>
+          </figure>
+        ))}
       </div>
-    );
-  }
-
-  const goToPrevious = () => {
-    setCurrentIndex(
-      (prevIndex) => (prevIndex - 1 + images.length) % images.length
-    );
-  };
-
-  const goToNext = () => {
-    setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
-  };
-
-  return (
-    <Card className="w-full max-w-3xl mx-auto overflow-hidden">
-      <CardContent className="p-0 relative">
-        <div className="relative h-64 md:h-96">
-          {images.map((image, index) => (
-            <img
-              key={index}
-              src={image}
-              alt={`Slide ${index + 1}`}
-              className={`absolute top-0 left-0 w-full h-full object-cover transition-opacity duration-500 ${
-                index === currentIndex ? "opacity-100" : "opacity-0"
-              }`}
-            />
-          ))}
-        </div>
-        <div className="absolute inset-0 flex items-center justify-between p-4">
-          <Button
-            variant="outline"
-            size="icon"
-            className="rounded-full bg-white/70 hover:bg-white/90"
-            onClick={goToPrevious}
-          >
-            <ChevronLeft className="h-6 w-6" />
-            <span className="sr-only">Previous slide</span>
-          </Button>
-          <Button
-            variant="outline"
-            size="icon"
-            className="rounded-full bg-white/70 hover:bg-white/90"
-            onClick={goToNext}
-          >
-            <ChevronRight className="h-6 w-6" />
-            <span className="sr-only">Next slide</span>
-          </Button>
-        </div>
-        <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2">
-          {images.map((_, index) => (
-            <button
-              key={index}
-              className={`w-2 h-2 rounded-full transition-colors duration-300 ${
-                index === currentIndex ? "bg-white" : "bg-white/50"
-              }`}
-              onClick={() => setCurrentIndex(index)}
-            >
-              <span className="sr-only">Go to slide {index + 1}</span>
-            </button>
-          ))}
-        </div>
-      </CardContent>
-    </Card>
-  );
-}
-
-// Separate Example Usage Component
-export function ExampleUsage() {
-  const images = [
-    "https://cf-assets.www.cloudflare.com/slt3lc6tev37/5exJlPlwAT2kQCITQhrIi9/1f771294e218b64c0490e83968075766/what_is_dns.png",
-    "https://cf-assets.www.cloudflare.com/slt3lc6tev37/5exJlPlwAT2kQCITQhrIi9/1f771294e218b64c0490e83968075766/what_is_dns.png",
-    "https://cf-assets.www.cloudflare.com/slt3lc6tev37/5exJlPlwAT2kQCITQhrIi9/1f771294e218b64c0490e83968075766/what_is_dns.png",
-    "https://cf-assets.www.cloudflare.com/slt3lc6tev37/5exJlPlwAT2kQCITQhrIi9/1f771294e218b64c0490e83968075766/what_is_dns.png",
-  ];
-
-  return (
-    <div className="p-4">
-      <h1 className="text-2xl font-bold mb-4">Image Slider Example</h1>
-      <ImageSlider images={images} />
-    </div>
+      <ScrollBar orientation="horizontal" />
+    </ScrollArea>
   );
 }
