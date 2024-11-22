@@ -77,7 +77,7 @@ export default function Service() {
   ];
 
   return (
-    <div className="container mx-auto px-4 py-12">
+    <div className="container mx-auto px-4 py-12 ">
       <div className="text-center max-w-3xl mx-auto mb-12">
         <span className="text-blue-900 font-extrabold text-[12px]">
           Санхүүгийн хяналтыг гар утаснаасаа
@@ -99,6 +99,71 @@ export default function Service() {
             featured={service.featured}
           />
         ))}
+      </div>
+
+      <div className="flex flex-col justify-center items-center">
+        <div className="flex flex-col p-10 gap-5">
+          <h1 className="text-[#1E4686] font-black text-[48px]">
+            Бид хэрхэн ажилладаг вэ?
+          </h1>
+          <span className="text-[#1E4686] font-mono text-[16px]">
+            Бид санхүүгийн зөвлөгөө өгөх чиглэлээр 20 жилийн туршлагатай.
+          </span>
+        </div>
+        <div className="md:grid sm:flex md:grid-cols-2 lg:grid lg:grid-cols-2 xl:flex justify-between gap-3">
+          <div className="flex justify-between cursor-pointer">
+            <div className="flex flex-col items-start pl-12 pt-10 pr-3 border bg-[#1E4686] h-[450px]  hover:bg-[#25539e]">
+              <h1 className="text-[48px] font-bold text-white pb-6">01.</h1>
+              <h2 className="text-[24px] text-white font-semibold">
+                Free consultation
+              </h2>
+              <span className="text-[14px] text-white font-serif pt-3">
+                Lorem ipsum dolor sit amet, consec tetuer adipi scing elit. Nam
+                cursus. Morbi ut mi. Nullam enim leo, egestas id, condim entum
+                at.
+              </span>
+            </div>
+          </div>
+          <div className="flex justify-between cursor-pointer">
+            <div className="flex flex-col items-start pl-12 pt-10 pr-3 border bg-[#1E4686] h-[450px]  hover:bg-[#25539e]">
+              <h1 className="text-[48px] font-bold text-white pb-6">02.</h1>
+              <h2 className="text-[24px] text-white font-semibold">
+                Sign a Contract
+              </h2>
+              <span className="text-[14px] text-white font-serif pt-3">
+                Lorem ipsum dolor sit amet, consec tetuer adipi scing elit. Nam
+                cursus. Morbi ut mi. Nullam enim leo, egestas id, condim entum
+                at.
+              </span>
+            </div>
+          </div>
+          <div className="flex justify-between cursor-pointer">
+            <div className="flex flex-col items-start pl-12 pt-10 pr-3 border bg-[#1E4686] h-[450px]  hover:bg-[#25539e]">
+              <h1 className="text-[48px] font-bold text-white pb-6">03.</h1>
+              <h2 className="text-[24px] text-white font-semibold">
+                Research & Planning
+              </h2>
+              <span className="text-[14px] text-white font-serif pt-3">
+                Lorem ipsum dolor sit amet, consec tetuer adipi scing elit. Nam
+                cursus. Morbi ut mi. Nullam enim leo, egestas id, condim entum
+                at.
+              </span>
+            </div>
+          </div>
+          <div className="flex justify-between cursor-pointer">
+            <div className="flex flex-col items-start pl-12 pt-10 pr-3 border bg-[#1E4686] h-[450px]  hover:bg-[#25539e]">
+              <h1 className="text-[48px] font-bold text-white pb-6">04.</h1>
+              <h2 className="text-[24px] text-white font-semibold">
+                Project Done!
+              </h2>
+              <span className="text-[14px] text-white font-serif pt-3">
+                Lorem ipsum dolor sit amet, consec tetuer adipi scing elit. Nam
+                cursus. Morbi ut mi. Nullam enim leo, egestas id, condim entum
+                at.
+              </span>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );

@@ -1,6 +1,6 @@
 import React from "react";
 import { Button } from "./ui/button";
-import Slider from "./Slider";
+import { ScrollAreaHorizontalDemo } from "./Slider";
 
 const Worker = () => {
   const products = [
@@ -57,37 +57,31 @@ const Worker = () => {
               мэргэжилтнүүд.
             </p>
             <div className="flex flex-wrap gap-4">
-              <Button className="bg-white hover:bg-black hover:text-white">
-                Demo туршаад үзээрэй <div className="ml-2 h-4 w-4"></div>
+              <Button className="bg-white hover:bg-black hover:text-white p-6 text-[16px] font-semibold">
+                гэрээ байгуулах
               </Button>
-              <Button>Заавар үзэх</Button>
             </div>
           </div>
-
-          <div className="relative">
-            <div className="relative z-10">
-              <div className="relative bg-white rounded-lg shadow-xl overflow-hidden">
-                <div className="aspect-video bg-gray-900 relative">
-                  <div className="w-[600px] h-[400px] object-cover text-white">
-                    <img className="object-cover" src="/logo.png" alt="" />
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="absolute -bottom-6 -right-6 bg-blue-100 rounded-full p-4">
-              <div className="w-32">
-                <div className="p-4 flex items-center gap-2">
-                  <div className="h-4 w-4 text-blue-600" />
-                  <span className="text-sm font-medium">Quick Start</span>
-                </div>
-              </div>
-            </div>
-          </div>
+          <video
+            autoPlay
+            loop
+            muted
+            playsInline
+            className="relative inset-0 z-10 bg-white w-[700px] h-[400px] object-cover"
+          >
+            <source
+              src="https://cdn.pixabay.com/video/2022/02/24/108777-681686580_large.mp4"
+              type="video/mp4"
+            />
+          </video>
         </div>
 
-        {/* Features Preview */}
         <div className="mt-16 grid md:grid-cols-3 gap-8">
-          <div className="p-6 rounded-lg border-solid bg-slate-300 hover:bg-slate-200 cursor-pointer">
+          <div
+            className="p-6 rounded-lg border-solid bg-slate-300 hover:bg-slate-200 cursor-pointer
+          
+          "
+          >
             <h3 className="font-semibold mb-2">Автомат тайлангууд</h3>
             <p className="text-sm text-gray-600">
               Хэдхэн товшилтоор санхүүгийн дэлгэрэнгүй тайланг гарга
@@ -113,9 +107,9 @@ const Worker = () => {
             </div>
           </div>
         </div>
-      </div>
-      <div className="w-full h-auto">
-        <Slider />
+        <div className="w-full h-auto">
+          <ScrollAreaHorizontalDemo />
+        </div>
       </div>
     </div>
   );

@@ -1,5 +1,5 @@
 import React from "react";
-
+import { GrLanguage } from "react-icons/gr";
 import Link from "next/link";
 import Image from "next/image";
 const Header = () => {
@@ -13,45 +13,48 @@ const Header = () => {
 
         <div className="hidden md:flex items-center gap-8">
           <Link
-            className="text-white/90 hover:text-white transition-colors"
+            className="text-white/90 hover:text-white transition-colors hover:border-b "
             href="/"
           >
             Эхлэл
           </Link>
           <Link
-            className="text-white/90 hover:text-white transition-colors"
+            className="text-white/90 hover:text-white transition-colors hover:border-b "
             href="/product"
           >
             Бүтээгдэхүүн
           </Link>
           <Link
-            className="text-white/90 hover:text-white transition-colors"
+            className="text-white/90 hover:text-white transition-colors hover:border-b "
             href="/interlocutor"
           >
             Харилцагч
           </Link>
           <Link
-            className="text-white/90 hover:text-white transition-colors"
+            className="text-white/90 hover:text-white transition-colors hover:border-b "
             href="/servic"
           >
             Үйлчилгээ
           </Link>
-          <Link
-            className="text-white/90 hover:text-white transition-colors"
+          {/* <Link
+            className="text-white/90 hover:text-white transition-colors hover:border-b gap-2"
             href="/contact"
           >
             Холбоо барих
-          </Link>
+          </Link> */}
+
+          <a
+            href="http://www.e-account.mn/LoginPage?ReturnUrl=%2F"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-white/90 hover:text-white transition-colors hover:border-b gap-2"
+          >
+            Нэвтрэх
+          </a>
         </div>
 
         <button className="flex items-center gap-2 rounded-md border border-white/20 px-3 py-1">
-          <Image
-            src="/placeholder.svg"
-            alt="English language"
-            width={20}
-            height={20}
-            className="h-5 w-5"
-          />
+          <GrLanguage />
           <span className="text-sm text-white">EN</span>
         </button>
       </nav>

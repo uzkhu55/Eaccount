@@ -12,10 +12,7 @@ import {
 import { Card, CardContent } from "../components/ui/card";
 import { Phone, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import Link from "next/link";
-import Image from "next/image";
 import { motion } from "framer-motion";
-import Footer from "@/components/Footer";
 import Component from "@/components/Stats";
 import Linear from "@/components/Linear";
 
@@ -111,7 +108,7 @@ const page = () => {
                 className="bg-white text-[#6B46C1] hover:bg-white/90 px-8 py-6 text-lg font-medium"
                 size="lg"
               >
-                Бидэнтэй холбогдох e
+                Бидэнтэй холбогдох
               </Button>
             </motion.div>
           </motion.main>
