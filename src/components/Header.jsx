@@ -1,5 +1,5 @@
 import React from "react";
-import { GrLanguage } from "react-icons/gr";
+
 import Link from "next/link";
 import Image from "next/image";
 const Header = () => {
@@ -42,21 +42,23 @@ const Header = () => {
           >
             Холбоо барих
           </Link> */}
-
           <a
             href="http://www.e-account.mn/LoginPage?ReturnUrl=%2F"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-white/90 hover:text-white transition-colors hover:border-b gap-2"
+            className="text-white/90 hover:bg-[#2B4B8C] hover:text-white bg-white text-black p-2 rounded-2xl  transition-colors  gap-2"
           >
             Нэвтрэх
           </a>
+          {/* <a
+            href="http://www.e-account.mn/LoginPage?ReturnUrl=%2F"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-white/90 hover:bg-[#2B4B8C] hover:text-white bg-white text-black p-2 rounded-2xl  transition-colors"
+          >
+            Бүртгүүлэх
+          </a> */}
         </div>
-
-        <button className="flex items-center gap-2 rounded-md border border-white/20 px-3 py-1">
-          <GrLanguage />
-          <span className="text-sm text-white">EN</span>
-        </button>
       </nav>
     </header>
   );
