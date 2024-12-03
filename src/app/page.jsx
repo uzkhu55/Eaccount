@@ -23,7 +23,7 @@ const page = () => {
       title: "Юу байх1",
       description:
         "Бизнесийн агуу зүйлийг хэзээ ч нэг хүн хийдэггүй. Тэдгээрийг хүмүүсийн баг хийдэг.",
-      bgColor: "bg-[#2B4B8C]",
+      bgColor: "bg-[#2051E5]",
     },
     {
       icon: DollarSign,
@@ -66,16 +66,16 @@ const page = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-b to-white pt-20">
-      <div className="relative">
+    <div className="min-h-screen bg-gradient-to-b  to-white pt-20">
+      <div className="relative ">
         <div className="absolute inset-0 z-0">
-          <img
+          {/* <img
             className="w-screen h-screen"
             src="https://i.pinimg.com/736x/f2/90/50/f29050c0d54fb56dd67213927877b8b6.jpg"
             alt="Logo"
-          />
+          /> */}
         </div>
-        <div className="  z-10 relative">
+        <div className="z-10 relative">
           <motion.main
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -105,7 +105,7 @@ const page = () => {
               transition={{ delay: 0.6, duration: 0.5 }}
             >
               <Button
-                className="bg-white text-[#6B46C1] hover:bg-white/90 px-8 py-6 text-lg font-medium"
+                className="bg-[#2051E5] text-white hover:bg-[#2051E3] px-8 py-6 text-lg font-medium"
                 size="lg"
               >
                 Бидэнтэй холбогдох
@@ -129,7 +129,7 @@ const page = () => {
                 <CardContent className="p-6  ">
                   <div
                     className={`w-12 h-12 rounded flex items-center justify-center ${
-                      index === 0 ? "" : "bg-[#2B4B8C]"
+                      index === 0 ? "" : "bg-[#2051E5]"
                     } mb-4`}
                   >
                     <Icon
@@ -153,9 +153,9 @@ const page = () => {
         </div>
       </div>
       <div className="container mx-auto px-4">
-        <div className="bg-[#2B4B8C] p-6 md:p-8 rounded-lg flex flex-col md:flex-row items-center justify-between mb-16">
+        <div className="bg-[#2051E5] p-6 md:p-8 rounded-lg flex flex-col md:flex-row items-center justify-between mb-16">
           <div className="flex items-center gap-4 mb-4 md:mb-0">
-            <div className="bg-[#4B699B] p-3 rounded">
+            <div className="bg-[#2051E5] p-3 rounded">
               <Phone className="h-6 w-6 text-white" />
             </div>
             <div>
@@ -163,7 +163,7 @@ const page = () => {
               <p className="text-white/80"></p>
             </div>
           </div>
-          <Button className="bg-white text-[#2B4B8C] hover:bg-white/90 flex items-center gap-2">
+          <Button className="bg-white text-[#2051E5] hover:bg-white/90 flex items-center gap-2">
             Залгах
             <ArrowRight className="h-4 w-4" />
           </Button>
@@ -181,7 +181,7 @@ const page = () => {
           <div className="relative">
             <h2 className="text-3xl font-bold text-[#2B4B8C] mb-6 relative inline-block">
               Харилцагчийн сэтгэгдэл
-              <span className="absolute -bottom-2 left-0 w-12 h-1 bg-[#2B4B8C]" />
+              <span className="absolute -bottom-2 left-0 w-12 h-1 bg-[#2051E5]" />
             </h2>
             <p className="text-gray-600 mb-6 leading-relaxed">
               Нягтлан бодох бүртгэлийн Юникус онлайн системийг манай байгууллага
@@ -205,14 +205,8 @@ const page = () => {
           </div>
 
           {/* Image */}
-          <div className="relative">
-            <img
-              src="/logo.png"
-              alt="Business meeting with financial charts"
-              className="w-full h-auto rounded-lg shadow-lg"
-              width={600}
-              height={400}
-            />
+          <div className="relative ">
+            <img src="/Eaccount.png" alt="" />
           </div>
         </div>
       </div>
