@@ -81,7 +81,7 @@ function SkillBar({ skill, percentage }) {
       </div>
       <div className="h-3 bg-gray-200 rounded-full">
         <motion.div
-          className="h-full bg-blue-900 rounded-full"
+          className="h-full bg-[#2051E5] rounded-full"
           initial={{ width: 0 }}
           animate={isVisible ? { width: `${percentage}%` } : { width: 0 }}
           transition={{ duration: 1, ease: "easeOut" }}

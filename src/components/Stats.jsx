@@ -64,17 +64,17 @@ export default function Component() {
   const isVisible = useIntersectionObserver(statsRef);
 
   return (
-    <div className="min-h-screen bg-blue-100/80 flex flex-col items-center justify-center text-center px-4 py-20">
+    <div className="min-h-screen   flex flex-col items-center justify-center text-center px-4 py-20">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
         className="mb-16"
       >
-        <div className="bg-blue-900 p-4 rounded-lg inline-block mb-8">
+        <div className="bg-blue-900 text-white p-4 rounded-lg inline-block mb-8">
           <PieChart className="w-8 h-8 text-white" />
         </div>
-        <h1 className="text-4xl md:text-5xl font-bold text-blue-900 mb-4">
+        <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">
           Нийт хандалтын тоо
         </h1>
         <p className="text-lg text-blue-800/80">20 жилийн туршлагатай </p>
