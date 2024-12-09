@@ -3,7 +3,7 @@ import Link from "next/link";
 
 const Footer = () => {
   return (
-    <div className="w-full items-center justify-center">
+    <div className="w-full items-center h-[400px] md:h-[339px] justify-center">
       <footer className="bg-[#2051E5] text-white">
         <img
           src="footer.png"
@@ -12,7 +12,6 @@ const Footer = () => {
         />
         <div className="container mx-auto px-4 py-12 flex flex-col">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-            {/* Company Info */}
             <div className="space-y-4">
               <div className="flex items-center space-x-2">
                 <div className="h-8 w-8 bg-white" />
@@ -42,7 +41,7 @@ const Footer = () => {
               </div>
             </div>
 
-            <div>
+            <div className="hidden md:flex md:flex-col ">
               <h3 className="text-lg font-semibold mb-4">Shortcuts</h3>
               <ul className="space-y-2">
                 <li>
@@ -68,7 +67,7 @@ const Footer = () => {
               </ul>
             </div>
 
-            <div>
+            <div className="hidden md:flex md:flex-col ">
               <h3 className="text-lg font-semibold mb-4">Products</h3>
               <ul className="space-y-2">
                 <li>
@@ -94,7 +93,7 @@ const Footer = () => {
               </ul>
             </div>
 
-            <div>
+            <div className="hidden md:flex md:flex-col ">
               <h3 className="text-lg font-semibold mb-4">Contact Us</h3>
               <ul className="space-y-2">
                 <li>

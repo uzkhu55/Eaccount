@@ -14,8 +14,8 @@ export default function AnimatedLogo() {
         x: 0, // End at the default position
       }}
       transition={{
-        duration: 0.5, // Slide duration
-        delay: 0.5,
+        duration: 1.1, // Slide duration
+        delay: 0.3,
         ease: [0, 0.71, 0.2, 1.01],
       }}
     >
