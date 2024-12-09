@@ -1,8 +1,11 @@
 "use client";
 import { TiDeleteOutline } from "react-icons/ti";
 import React, { useState } from "react";
+
 import Link from "next/link";
-import AnimatedLogo from "./AnimatedLogo";
+import Image from "next/image";
+import NavItem from "./NavHeader";
+import AnimatedLogo from "./Animatedlogo";
 
 const Header = () => {
   const [open, setOpen] = useState(false);
@@ -10,84 +13,127 @@ const Header = () => {
   const toggleMenu = () => setOpen((prev) => !prev);
 
   return (
-    <header className="z-50 fixed w-full bg-[#2051E5] px-6 py-4">
-      <nav className="flex justify-between items-center">
-        {/* Left Section */}
-        <div className="flex items-center">
-          <AnimatedLogo />
-          <Link href="#home" className="ml-4">
-            <img src="/-Account.png" alt="Account" className="w-[200px]" />
-          </Link>
-        </div>
-
-        {/* Button */}
-        <button
-          className="md:hidden text-white z-50 flex items-center justify-center"
-          onClick={toggleMenu}
-        >
-          {open ? (
-            <TiDeleteOutline
-              size={30}
-              className="transition-all duration-300"
+    <header className="z-50 justify-center fixed w-screen bg-[#2051E5] px-12 py-6">
+      <div>
+        <nav className="flex items-center justify-between">
+          <div className="absolute left-0 w-full h-full overflow-hidden">
+            <img
+              src="/layeeer.png"
+              className="object-cover w-full md:w-[60%] h-full"
+              alt="Layer"
             />
-          ) : (
-            <span className="text-xl font-bold transition-all duration-300">
-              ☰
+          </div>
+
+          <div className="flex md:left-0 md:ml-[80px] md:w-[163px] w-[250px] ml-[-40px] items-center">
+            <span className="text-2xl flex w-[250px] font-bold items-center text-white">
+              <div>
+                <AnimatedLogo />
+              </div>
+              <NavItem href="#home" delay={0.3}>
+                <img
+                  src="/-Account.png"
+                  className="w-[250px] h-[40px]"
+                  alt=""
+                />
+              </NavItem>
             </span>
-          )}
-        </button>
+          </div>
 
-        <div className="hidden md:flex gap-8 items-center">
-          <Link href="/" className="text-white font-bold hover:border-b">
-            Эхлэл
-          </Link>
-          <Link href="/product" className="text-white font-bold hover:border-b">
-            Бүтээгдэхүүн
-          </Link>
-          <Link
-            href="/interlocutor"
-            className="text-white font-bold hover:border-b"
+          <button
+            className="md:hidden text-white z-50 flex items-center justify-center"
+            onClick={toggleMenu}
           >
-            Харилцагч
-          </Link>
-          <Link href="/servic" className="text-white font-bold hover:border-b">
-            Үйлчилгээ
-          </Link>
-          <a
-            href="http://www.e-account.mn/LoginPage?ReturnUrl=%2F"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-white font-bold hover:border-b"
-          >
-            Нэвтрэх
-          </a>
-        </div>
-      </nav>
+            {open ? (
+              <TiDeleteOutline
+                size={30}
+                className="transition-all duration-300"
+              />
+            ) : (
+              <span className="text-xl font-bold transition-all duration-300">
+                ☰
+              </span>
+            )}
+          </button>
 
-      {open && (
-        <div className="fixed inset-0 bg-[#2051E5] pt-16 px-6 md:hidden z-40">
-          <div className="flex flex-col gap-6">
-            <Link href="/" className="text-white font-bold">
+          <div className="hidden md:flex items-center gap-8">
+            <Link
+              className="text-white/90 z-50 hover:text-white font-bold text-lg transition-colors hover:border-b"
+              href="/"
+            >
               Эхлэл
             </Link>
-            <Link href="/product" className="text-white font-bold">
+            <Link
+              className="text-white/90 z-50 hover:text-white font-bold text-lg transition-colors hover:border-b"
+              href="/product"
+            >
               Бүтээгдэхүүн
             </Link>
-            <Link href="/interlocutor" className="text-white font-bold">
+            <Link
+              className="text-white/90 z-50 hover:text-white font-bold text-lg transition-colors hover:border-b"
+              href="/interlocutor"
+            >
               Харилцагч
             </Link>
-            <Link href="/servic" className="text-white font-bold">
+            <Link
+              className="text-white/90 z-50 hover:text-white text-lg font-bold transition-colors hover:border-b"
+              href="/service"
+            >
               Үйлчилгээ
             </Link>
             <a
               href="http://www.e-account.mn/LoginPage?ReturnUrl=%2F"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-white font-bold"
+              className="text-white/90 z-50 hover:text-white font-bold text-lg transition-colors hover:border-b"
             >
               Нэвтрэх
             </a>
           </div>
+        </nav>
+      </div>
+
+      {/* Mobile Menu */}
+      {open && (
+        <div className="fixed inset-0 bg-[#2051E5] pt-16 px-6 md:hidden">
+          <div className="flex flex-col items-start gap-6">
+            <Link
+              className="text-white/90 hover:text-white font-bold text-lg transition-colors"
+              href="/"
+            >
+              Эхлэл
+            </Link>
+            <Link
+              className="text-white/90 hover:text-white font-bold text-lg transition-colors"
+              href="/product"
+            >
+              Бүтээгдэхүүн
+            </Link>
+            <Link
+              className="text-white/90 hover:text-white font-bold text-lg transition-colors"
+              href="/interlocutor"
+            >
+              Харилцагч
+            </Link>
+            <Link
+              className="text-white/90 hover:text-white font-bold text-lg transition-colors"
+              href="/servic"
+            >
+              Үйлчилгээ
+            </Link>
+            <a
+              href="http://www.e-account.mn/LoginPage?ReturnUrl=%2F"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-white/90 hover:text-white font-bold text-lg transition-colors"
+            >
+              Нэвтрэх
+            </a>
+          </div>
+
+          {/* Close button inside mobile menu */}
+          <button className="text-white mt-6" onClick={toggleMenu}>
+            <TiDeleteOutline size={30} />
+          </button>
         </div>
       )}
     </header>
