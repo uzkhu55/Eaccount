@@ -1,4 +1,8 @@
-/** @type {import('tailwindcss').Config} */
+/**
+ * @format
+ * @type {import('tailwindcss').Config}
+ */
+
 module.exports = {
   content: [
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
@@ -8,10 +12,19 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
+        primary: "#2051E5",
+        secondary: "#2B4B8C",
+        background: "#f5f5f5",
+        foreground: "#333333",
+      },
+      fontFamily: {
+        sans: ["Inter", "sans-serif"],
       },
     },
   },
-  plugins: [],
+  plugins: [
+    require("@tailwindcss/typography"),
+    require("@tailwindcss/forms"),
+    require("@tailwindcss/aspect-ratio"),
+  ],
 };

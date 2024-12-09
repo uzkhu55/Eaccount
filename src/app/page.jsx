@@ -1,3 +1,5 @@
+/** @format */
+
 "use client";
 
 import {
@@ -86,7 +88,7 @@ const page = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2, duration: 0.5 }}
-              className="mb-6 text-4xl md:text-7xl font-bold text-white max-w-4xl mx-auto leading-tight"
+              className="mb-6 text-4xl md:text-7xl font-bold text-black max-w-4xl mx-auto leading-tight"
             >
               Манай технологи хөгжлийг хурдасгана
             </motion.h1>
@@ -94,7 +96,7 @@ const page = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.4, duration: 0.5 }}
-              className="mb-12 text-lg md:text-xl text-white/90 max-w-2xl mx-auto"
+              className="mb-12 text-lg md:text-xl text-black/90 max-w-2xl mx-auto"
             >
               Дэвшилтэд технологи ашиглан таны бизнесийн ашгийг нэмэгдүүлж,
               хяналтыг сайжруулна
@@ -122,28 +124,16 @@ const page = () => {
             return (
               <Card
                 key={index}
-                className={`${service.bgColor} ${
-                  index === 0 ? "text-white" : "text-gray-800"
-                } shadow-lg hover:shadow-xl transition-transform duration-300 transform hover:-translate-y-2`}
+                className="text-gray-800 shadow-lg hover:shadow-xl transition-transform duration-300 transform hover:-translate-y-2 cursor-pointer"
               >
-                <CardContent className="p-6  ">
-                  <div
-                    className={`w-12 h-12 rounded flex items-center justify-center ${
-                      index === 0 ? "" : "bg-[#2051E5]"
-                    } mb-4`}
-                  >
-                    <Icon
-                      className={`h-6 w-6 ${
-                        index === 0 ? "text-white" : "text-white"
-                      }`}
-                    />
+                <CardContent className="p-6 bg-white group hover:bg-[#2051E5] hover:text-white">
+                  <div className="w-12 h-12 rounded flex items-center justify-center mb-4 bg-[#2051E5] group-hover:bg-white">
+                    <Icon className="h-6 w-6 text-white group-hover:text-[#2051E5]" />
                   </div>
-                  <h3 className="text-xl font-bold mb-2">{service.title}</h3>
-                  <p
-                    className={`${
-                      index === 0 ? "text-white/90" : "text-gray-600"
-                    } group-hover:text-white`}
-                  >
+                  <h3 className="text-xl font-bold mb-2 group-hover:text-white">
+                    {service.title}
+                  </h3>
+                  <p className="text-gray-600 group-hover:text-white/90">
                     {service.description}
                   </p>
                 </CardContent>
@@ -163,7 +153,11 @@ const page = () => {
               <p className="text-white/80"></p>
             </div>
           </div>
-          <Button className="bg-white text-[#2051E5] hover:bg-white/90 flex items-center gap-2">
+          <Button
+            as="a"
+            href="tel:+97688034441" // Утасны дугаараа энд оруулна
+            className="bg-white text-[#2051E5] hover:bg-white/90 flex items-center gap-2 px-6 py-3"
+          >
             Залгах
             <ArrowRight className="h-4 w-4" />
           </Button>
@@ -212,21 +206,6 @@ const page = () => {
       </div>
       <Component />
       <Linear />
-
-      <div className="container mx-auto px-4 py-16 text-center">
-        <h2 className="text-3xl flex items-center justify-center flex-col gap-4 md:text-4xl font-bold text-[#2B4B8C] mb-6">
-          Асуулт байна уу? Бидэнтэй чөлөөтэй холбогдоорой
-          <a
-            className="flex items-center"
-            target="blank"
-            href="
-          https://www.facebook.com/victory.tse
-        "
-          >
-            <Facebook />
-          </a>
-        </h2>
-      </div>
     </div>
   );
 };
